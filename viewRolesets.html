@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WW Rolesets</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="ww.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var roleset = "[b]Current Rolesets:[/b]<br /><br />";
+            for (var role in ww.Rolesets) {
+                roleset += ww.Rolesets[role].players + " players: ";
+                roleset += "[b]" + ww.Rolesets[role].name + "[/b]<br />";
+                roleset += "[i]" + ww.Rolesets[role].desc + "[/i]<br />";
+                for (var r in ww.Rolesets[role].roles) {
+                    roleset += ww.Rolesets[role].roles[r].count + "x ";
+                    roleset += ww.Rolesets[role].roles[r].role.desc;
+                    if(ww.Rolesets[role].roles[r].n0) {
+                        roleset += " (" + ww.Rolesets[role].roles[r].n0.desc + ")";
+                    }
+                    roleset += "<br />";
+                }
+                roleset += "[size=7](" + ww.Rolesets[role].reveal.desc + ")[/size]<br />";
+                roleset += "<br />";
+            }
+            $('body').html(roleset);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

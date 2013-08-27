@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Werewolf</title>
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link type="text/css" rel="stylesheet" href="ww.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script type="text/javascript" src="utility.js"></script>
+    <script type="text/javascript" src="ww.js"></script>
+    <script type="text/javascript" src="wwgame.js"></script>
+    <script type="text/javascript" src="wwhtml.js"></script>
+    <script type="text/javascript" src="version.js"></script>
+    <script type="text/javascript" src="loadingScreen.js"></script>
+    <script type="text/javascript" src="titleScreen.js"></script>
+    <script type="text/javascript" src="playerEntryScreen.js"></script>
+    <script type="text/javascript" src="duskBlankLockedScreen.js"></script>
+    <script type="text/javascript" src="duskPlayerScreen.js"></script>
+    <script type="text/javascript" src="duskLockedScreen.js"></script>
+    <script type="text/javascript" src="dawnPlayScreen.js"></script>
+    <script type="text/javascript" src="dawnChooseLynch.js"></script>
+    <script type="text/javascript" src="lynchRevealScreen.js"></script>
+    <script type="text/javascript" src="gameOverScreen.js"></script>
+</head>
+
+<body style="background: black; border: 0;">
+
+    <div data-role="page" data-theme="a" id="loadingScreen" class="centerAlign">
+        <h2>Werewolf</h2>
+        loading...
+        <br/><br/>
+    </div>
+
+    <div data-role="page" data-theme="a" id="titleScreen" class="centerAlign">
+        <div class="centerAlign bgMoon">
+            <h2>Werewolf</h2>
+
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup">
+                    <legend>Players/Roleset:</legend>
+                    <label for="players">Players:</label>
+                    <select id="players" name="players"></select>
+                    <label for="roleset">Roleset:</label>
+                    <select id="roleset" name="roleset"></select>
+                </fieldset>
+            </div>
+
+            <div id="rolesetdesc" class="bgGrayTrans"></div>
+            <button id="titlePlayButton">Play</button>
+            <br/><br/>
+            <div id="versionText"></div>
+        </div>
+    </div>
+
+    <div data-role="page" data-theme="a" id="playerEntryScreen">
+        <div class="centerAlign bgMoon">
+            <h2 class="centerAlign">Who's Playing?</h2>
+            <div id="editPlayerListDiv"><div id="playerList"></div></div>
+            <div class="centerAlign">
+                <button id="entryPlayButton">Play</button><br />
+                <button id="entryReturnButton">Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" data-theme="a" id="duskLockedScreen" class="centerAlign">
+        <div class="centerAlign bgRoleLocked">
+            <h2><span id="lockName">You</span></h2>
+            <br />
+            <div>Welcome.</div>
+            <br /><br />
+
+            <div>Click the buttons below to view your role.</div>
+            <br/><br/>
+            <div data-role="content" class="centerAlign">
+                <div data-role="fieldcontain" class="centerAlign">
+                    <fieldset data-role="controlgroup" data-type="horizontal" class="centerSelf centerAlign">
+                        <input type="checkbox" name="unlockButton1" id="unlockButton1"/><label for="unlockButton1">Show</label>
+                        <input type="checkbox" name="unlockButton2" id="unlockButton2"/><label for="unlockButton2">Role</label>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" data-theme="a" id="duskBlankLockedScreen">
+        <div class="bgRoleLocked">&nbsp;</div>
+    </div>
+
+    <div data-role="page" data-theme="a" id="duskPlayerScreen" class="centerAlign">
+        <div id="duskPlayerBg" class="centerAlign bgRoleLocked">
+            <div class="roleUpperSpace"><h2><span id="duskPlayerName">You</span></h2></div>
+            <div class="rolePictureSpace">&nbsp;</div>
+            <div id="roleInfo" class="bgGrayTrans"></div>
+            <div id="roleInstructions"></div>
+            <br />
+            <div id="roleActions"></div>
+            <br />
+            <button id="nextPlayerButton">Hide Role</button><br />
+        </div>
+    </div>
+
+    <div data-role="page" data-theme="a" id="dawnPlayScreen" class="centerAlign">
+        <div class="centerAlign bgMoon">
+            <div id="dawnRevealNightActions"></div>
+            <br /><br />
+            Someone must hang for these atrocities.  Choose a lynch.
+            <br /><br />
+            <button id="lynchContinue">Continue</button><br />
+        </div>
+    </div>
+
+    <div data-role="page" data-theme="a" id="dawnChooseLynch" class="centerAlign">
+        <div class="centerAlign bgMoon">
+            <div id="lynchPlayerListDiv"><fieldset id="lynchPlayerList" data-theme="a" data-role="controlgroup"></fieldset></div>
+            <button id="lynchNow">Lynch</button><br />
+        </div>
+    </div>
+
+    <div data-role="page" data-theme="a" id="lynchRevealScreen" class="centerAlign">
+        <div class="centerAlign bgMoon">
+            You have lynched:
+            <br /><br />
+            <div id="lynchRevealText"></div>
+            <br /><br />
+            <button id="lynchRevealContinue">Continue</button><br />
+        </div>
+    </div>
+
+    <div data-role="page" data-theme="a" id="gameOverScreen" class="centerAlign">
+        <div class="centerAlign bgMoon">
+            <h3>Game Over</h3>
+            <br /><br />
+            <div class="bgGrayTrans" id="gameOverText"></div>
+            <br /><br />
+            <button id="gameOverMainMenu">Back to Main Menu</button><br />
+        </div>
+    </div>
+
+</body>
+</html>
