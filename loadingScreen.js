@@ -27,8 +27,10 @@ $(function() {
         // Called after all of the DOM and images are finished loading
 
         // Load up the images that we're not currently using so they're ready
-        ww.loadingScreen.preloadImages(['images/moonbg.jpg',
-                                        'images/roleLocked.png',
+        ww.loadingScreen.preloadImages(['images/appBackground.jpg',
+                                        'images/appDusk.jpg',
+                                        'images/appDawn.jpg',
+                                        'images/roleLocked.jpg',
                                         'images/roleVillager.jpg',
                                         'images/roleSeer.jpg',
                                         'images/roleHunter.jpg',
