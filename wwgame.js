@@ -78,19 +78,18 @@ var wwgame = {};
 
     wwgame.getMaxNumberActionsForCurDay = function() {
         var max = 0;
+        // TODO: PV: If no-reveal game, always show the max of everyone, since no one should know
         var listLiving = wwgame.getLivingPlayersList();
         for (var i = 0; i < listLiving.length; i++) {
-            if (wwgame.players[i].alive) {  // PV: NOTE: Or if no-reveal game, since no one should know
-                if (wwgame.curDay === 0) {
-                    if (wwgame.players[i].role.n0 == ww.N0Actions.Kill ||
-                        wwgame.players[i].role.n0 == ww.N0Actions.ChooseView) {
-                        max = (max < 1) ? 1 : max;
-                    }
+            if (wwgame.curDay === 0) {
+                if (listLiving[i].role.n0 == ww.N0Actions.Kill ||
+                    listLiving[i].role.n0 == ww.N0Actions.ChooseView) {
+                    max = (max < 1) ? 1 : max;
                 }
-                else {
-                    var nightActions = wwgame.players[i].role.role.nightActionReq;
-                    max = (max < nightActions) ? nightActions : max;
-                }
+            }
+            else {
+                var nightActions = listLiving[i].role.role.nightActionReq;
+                max = (max < nightActions) ? nightActions : max;
             }
         }
         return max;
