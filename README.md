@@ -26,7 +26,7 @@ Play now!
 License
 =======
 
-Source code Copyright (c) 2013 Peter Vasiliauskas
+Source code Copyright (c) 2016 Peter Vasiliauskas
 
 Images Copyright (c) 2013 Michael Wagner
 

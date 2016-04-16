@@ -7,7 +7,7 @@ $(function() {
         var options = "";
         var addedPlayers = [];
 
-        $("#versionText").html("Version 0.14 (10/24/2013)");
+        $("#versionText").html("Version 0.15 (4/15/2016)");
 
         for (var role in ww.Rolesets) {
             if (jQuery.inArray(ww.Rolesets[role].players, addedPlayers) === -1) {
