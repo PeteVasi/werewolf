@@ -6,10 +6,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Werewolf</title>
-    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link type="text/css" rel="stylesheet" href="ww.css" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="utility.js"></script>
     <script type="text/javascript" src="ww.js"></script>
     <script type="text/javascript" src="wwgame.js"></script>
@@ -28,13 +28,13 @@
 
 <body style="background: black; border: 0;">
 
-    <div data-role="page" data-theme="a" id="loadingScreen" class="centerAlign">
+    <div data-role="page" data-theme="b" id="loadingScreen" class="centerAlign">
         <h2>Werewolf</h2>
         loading...
         <br/><br/>
     </div>
 
-    <div data-role="page" data-theme="a" id="titleScreen" class="centerAlign">
+    <div data-role="page" data-theme="b" id="titleScreen" class="centerAlign">
         <div class="centerAlign bgApp">
             <h2>Werewolf</h2>
 
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <div data-role="page" data-theme="a" id="playerEntryScreen">
+    <div data-role="page" data-theme="b" id="playerEntryScreen">
         <div class="centerAlign bgApp">
             <h2 class="centerAlign">Who's Playing?</h2>
             <div id="editPlayerListDiv"><div id="playerList"></div></div>
@@ -66,14 +66,14 @@
         </div>
     </div>
 
-    <div data-role="page" data-theme="a" id="duskLockedScreen" class="centerAlign">
+    <div data-role="page" data-theme="b" id="duskLockedScreen" class="centerAlign">
         <div class="centerAlign bgRoleLocked">
             <h2><span id="lockName">You</span></h2>
             <br />
             <div>Welcome.</div>
             <br /><br />
 
-            <div>Click the buttons below to view your role.</div>
+            <div>Tap both buttons below to view your role.</div>
             <br/><br/>
             <div data-role="content" class="centerAlign">
                 <div data-role="fieldcontain" class="centerAlign">
@@ -86,11 +86,11 @@
         </div>
     </div>
 
-    <div data-role="page" data-theme="a" id="duskBlankLockedScreen">
+    <div data-role="page" data-theme="b" id="duskBlankLockedScreen">
         <div class="bgRoleLocked">&nbsp;</div>
     </div>
 
-    <div data-role="page" data-theme="a" id="duskPlayerScreen" class="centerAlign">
+    <div data-role="page" data-theme="b" id="duskPlayerScreen" class="centerAlign">
         <div id="duskPlayerBg" class="centerAlign bgRoleLocked">
             <div class="roleUpperSpace"><h2><span id="duskPlayerName">You</span></h2></div>
             <div class="rolePictureSpace">&nbsp;</div>
@@ -103,7 +103,7 @@
         </div>
     </div>
 
-    <div data-role="page" data-theme="a" id="dawnPlayScreen" class="centerAlign">
+    <div data-role="page" data-theme="b" id="dawnPlayScreen" class="centerAlign">
         <div class="centerAlign bgDawn">
             <div id="dawnRevealNightActions"></div>
             <br /><br />
@@ -113,14 +113,14 @@
         </div>
     </div>
 
-    <div data-role="page" data-theme="a" id="dawnChooseLynch" class="centerAlign">
+    <div data-role="page" data-theme="b" id="dawnChooseLynch" class="centerAlign">
         <div class="centerAlign bgDawn">
-            <div id="lynchPlayerListDiv"><fieldset id="lynchPlayerList" data-theme="a" data-role="controlgroup"></fieldset></div>
+            <div id="lynchPlayerListDiv"><fieldset id="lynchPlayerList" data-theme="b" data-role="controlgroup"></fieldset></div>
             <button id="lynchNow">Lynch</button><br />
         </div>
     </div>
 
-    <div data-role="page" data-theme="a" id="lynchRevealScreen" class="centerAlign">
+    <div data-role="page" data-theme="b" id="lynchRevealScreen" class="centerAlign">
         <div class="centerAlign bgDusk">
             You have lynched:
             <br /><br />
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <div data-role="page" data-theme="a" id="gameOverScreen" class="centerAlign">
+    <div data-role="page" data-theme="b" id="gameOverScreen" class="centerAlign">
         <div class="centerAlign bgApp">
             <h3>Game Over</h3>
             <br /><br />

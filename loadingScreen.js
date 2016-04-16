@@ -3,7 +3,7 @@ ww.loadingScreen = {};
 $(function() {
 
     // Show that we're loading
-    $.mobile.showPageLoadingMsg();
+    $.mobile.loading('show');
     
     // General setup
     $.mobile.defaultPageTransition = "slide";
@@ -39,7 +39,7 @@ $(function() {
                                        function() {
             var loadPage = wwgame.loadState();
 
-            $.mobile.hidePageLoadingMsg();
+            $.mobile.loading('hide');
 
             // Title Screen Setup
             ww.titleScreen.resetTitleScreen();

@@ -23,3 +23,4 @@ h3 { margin: 0; padding: 0; }
 
 /* Fix for jQuery Mobile's centering mishaps */
 .ui-checkbox { float: none !important; display: inline-block !important; margin: -3px !important; }
+.ui-controlgroup-controls { width: 100% !important; }
